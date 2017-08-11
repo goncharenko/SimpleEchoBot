@@ -25,6 +25,9 @@ class App {
 
   private mountRoutes(): void {
     const router = express.Router();
+    router.get('/', (req, res) => {
+      res.send('I\'m Simple Echo Bot!')
+    });
     router.post('/api/messages', (res, req) => {
       this.connectorListener(res, req);
     });
