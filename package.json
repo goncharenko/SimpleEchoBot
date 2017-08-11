@@ -6,7 +6,8 @@
   "author": "Vitaly Goncharenko",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register index.ts"
+    "start": "ts-node -r tsconfig-paths/register index.ts",
+    "postinstall": "typings install && tsc"
   },
   "dependencies": {
     "botbuilder": "^3.9.0",
@@ -18,5 +19,8 @@
     "ts-node": "^3.3.0",
     "tsconfig-paths": "^2.2.0",
     "typescript": "^2.4.2"
+  },
+  "engines": {
+    "node": "8.0.20"
   }
 }
