@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register index.ts",
-    "postinstall": "typings install && tsc"
+    "postinstall": "tsc"
   },
   "dependencies": {
     "botbuilder": "^3.9.0",
