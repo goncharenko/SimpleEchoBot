@@ -6,7 +6,8 @@
   "author": "Vitaly Goncharenko",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register index.ts"
+    "start": "node ./dist/index.js",
+    "dev": "ts-node -r tsconfig-paths/register index.ts"
   },
   "dependencies": {
     "botbuilder": "^3.9.0",
