@@ -2,7 +2,7 @@
   "name": "echobot",
   "version": "1.0.0",
   "description": "Sample botbuilder bot with yarn, nodejs and typescript",
-  "main": "index.ts",
+  "main": "index.js",
   "author": "Vitaly Goncharenko",
   "license": "MIT",
   "scripts": {
