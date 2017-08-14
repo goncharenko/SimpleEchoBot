@@ -258,4 +258,4 @@ paket-files/
 .vscode/
 
 # Dist folder
-# /dist
+/dist
