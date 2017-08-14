@@ -88,6 +88,11 @@ goto :EOF
 :Deployment
 echo Handling node.js deployment.
 
++:: 0. Create empty lib\server.js to make KuduSync happy
+ +:: see https://github.com/projectkudu/kudu/issues/1753
+ +call :ExecuteCmd mkdir "%DEPLOYMENT_SOURCE%\dist"
+ +call :ExecuteCmd copy NUL "%DEPLOYMENT_SOURCE%\dist\server.js"
+
 :: 1. KuduSync
 IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
   call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
@@ -112,9 +117,6 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 
 :: 5. Compile TypeScript
 echo Transpiling TypeScript in %DEPLOYMENT_TARGET%...call :ExecuteCmd node %DEPLOYMENT_TARGET%\node_modules\typescript\bin\tsc
-
-:: 2. Select node version
-call :SelectNodeVersion
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
