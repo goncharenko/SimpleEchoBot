@@ -6,6 +6,7 @@
   "author": "Vitaly Goncharenko",
   "license": "MIT",
   "scripts": {
+    "start": "node ./dist/index.js",
     "dev": "ts-node -r tsconfig-paths/register index.ts"
   },
   "dependencies": {
