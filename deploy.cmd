@@ -94,11 +94,11 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
-:: 3. Install Yarn
+:: 2. Install Yarn
 echo Verifying Yarn Install.
 call :ExecuteCmd !NPM_CMD! install yarn -g
 
-:: 4. Install Yarn packages
+:: 3. Install Yarn packages
 echo Installing Yarn Packages.
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
@@ -107,10 +107,10 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
-:: 5. Compile TypeScript
+:: 4. Compile TypeScript
 echo Transpiling TypeScript in %DEPLOYMENT_TARGET%...call :ExecuteCmd node %DEPLOYMENT_TARGET%\node_modules\typescript\bin\tsc -p .
 
-:: 2. Select node version
+:: 5. Select node version
 call :SelectNodeVersion
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
