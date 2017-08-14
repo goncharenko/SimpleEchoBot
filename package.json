@@ -2,12 +2,11 @@
   "name": "echobot",
   "version": "1.0.0",
   "description": "Sample botbuilder bot with yarn, nodejs and typescript",
-  "main": "index.js",
   "author": "Vitaly Goncharenko",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/index.js",
-    "dev": "ts-node -r tsconfig-paths/register index.ts"
+    "start": "node ./dist/server.js",
+    "dev": "ts-node -r tsconfig-paths/register server.ts"
   },
   "dependencies": {
     "botbuilder": "^3.9.0",
