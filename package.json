@@ -5,7 +5,7 @@
   "author": "Vitaly Goncharenko",
   "license": "MIT",
   "scripts": {
-    "start": "node ..\\dist\\server.js",
+    "start": "node dist\\server.js",
     "dev": "ts-node -r tsconfig-paths/register server.ts"
   },
   "dependencies": {
